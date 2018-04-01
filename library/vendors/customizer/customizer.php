@@ -71,19 +71,19 @@ function some_like_it_neat_add_customizer_theme_options($wp_customize)
 
     // General Link Colors
     $wp_customize->add_panel(
-        'color_panel', array(
-            'priority'          => 10,
-            'capability'        => 'edit_theme_options',
-            'theme_supports'    => '',
-            'title'             => __('Color Palette Settings', 'some-like-it-neat'),
-            'description'       => __('Color palette related settings and config.', 'some-like-it-neat'),
-        ) 
+			'color_panel', array(
+			'priority'          => 10,
+			'capability'        => 'edit_theme_options',
+			'theme_supports'    => '',
+			'title'             => __('Color Palette Settings', 'some-like-it-neat'),
+			'description'       => __('Color palette related settings and config.', 'some-like-it-neat'),
+		)
     );
 
     $wp_customize->add_setting(
         'some_like_it_neat_add_link_color', array(
             'default'               => '#000000',
-            'sanitize_callback'     => 'maybe_hash_hex_color',
+            'sanitize_callback'     => 'sanitize_hex_color',
         ) 
     );
 
@@ -319,6 +319,31 @@ function some_like_it_neat_add_customizer_theme_options($wp_customize)
             )
         )
     );
+
+	/**
+	 * Hide or Show Post Navigation
+	 */
+	$wp_customize->add_setting(
+		'some-like-it-neat_hide_post_navigation',
+		array(
+			'default'   => 'no',
+			'transport' => 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+		'some-like-it-neat_hide_post_navigation',
+		array(
+			'section'       => 'content_extras',
+			'label'         => __('Hide WordPress Post Navigation Globally?', 'some-like-it-neat'),
+			'description'   => __('Hides the post navigation links at the bottom of a page or post. You can also do this on a per page basis.', 'some-like-it-neat'),
+			'type'          => 'radio',
+			'choices'       => array(
+				'yes'           => 'Yes',
+				'no'            => 'No'
+			)
+		)
+	);
 
     /**
         * Enable/Disable Post Format support

@@ -3,29 +3,16 @@
 html {
 
 }
-@include ltr {
-	body {
-		background-color: $base-body-color;
-		color: $primary-font-color;
-		font-family: $content;
-		line-height: 1.5em;
-		margin: 0;
-		word-break: break-word;
-	}
+
+body {
+	background-color: $base-body-color;
+	color: $primary-font-color;
+	font-family: $content;
+	line-height: 1.5em;
+	margin: 0;
+	word-break: break-word;
 }
 
-@include rtl {
-	body {
-		background-color: $base-body-color;
-		color: $primary-font-color;
-		direction: rtl;
-		font-family: $content;
-		line-height: 1.5em;
-		word-break: normal;
-		direction: rtl;
-	  unicode-bidi: embed;
-	}
-}
 
 .site-header,
 .site-footer,
@@ -35,8 +22,8 @@ html {
 }
 
 main#main {
-	position: relative;
-	z-index: 0;
+	//position: relative;
+	//z-index: 0;
 }
 
 #primary {
@@ -55,14 +42,9 @@ main#main {
 	margin: 0 auto;
 	width: 100%;
 
-	ol {
-		li {
-			@include margin-left(10px);
-		}
-	}
-	ul {
+	ul, ol {
 		list-style: none;
-		@include margin-left(40px);
+		margin-left: 20px;
 		li {
 			list-style-type: square;
 			ul {

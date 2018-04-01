@@ -4,8 +4,6 @@
 @import '../vendor/grid-settings';
 @import '../../../node_modules/bourbon-neat/core/neat';
 @import '../abstracts/variables';
-@import '../../../node_modules/bi-app-sass/bi-app/bi-app-ltr';
-@import '../../../node_modules/bi-app-sass/bi-app/bi-app-rtl';
 @import '../abstracts/typography';
 @import '../components/buttons';
 
@@ -40,8 +38,8 @@ $fourth_level: #999;
     }
     &.one-page {
         position: fixed;
+        right: 5%;
         top: 50px;
-        @include right(5%);
         max-width: 200px;
     }
 
@@ -110,7 +108,7 @@ $fourth_level: #999;
         position: absolute;
         z-index: 4;
         top: 0;
-        @include left(0);
+        right: 0;
         width: 50px;
         height: 100%;
         display: inline-block;
@@ -141,8 +139,8 @@ $fourth_level: #999;
     &.one-page {
         position: fixed;
         top: 0;
-        @include right(5%);
-        @include padding-right(45px);
+        right: 5%;
+        padding-right: 45px;
     }
 
     .touch-button {
@@ -150,7 +148,7 @@ $fourth_level: #999;
         position: absolute;
         z-index: 999;
         top: 0;
-        @include right(0);
+        right: 0;
         width: 50px;
         height: 50px;
         display: none;
@@ -165,8 +163,10 @@ $fourth_level: #999;
     }
 }
 .menu-button {
+    margin-bottom: 0;
     &:hover {
-        color: $base-body-color;
+        color: $primary-font-color;
+        padding: 1em;
         i.navicon {
             color: $base-body-color;
                 &:after {
@@ -178,14 +178,24 @@ $fourth_level: #999;
     i.navicon {
         display: block !important;
         position: relative;
-        @include right(30px);
+        right: 30px;
         &:after {
             color: #555;
             content:'Menu';
         }
     }
 }
+@media all and (min-width: 0) {
+    ul#menu-all-pages {
+        display: flex;
+        flex-direction: column;
+    }
+}
 @media all and (min-width: 800px) {
+    ul#menu-all-pages {
+        display: flex;
+        flex-direction: row;
+    }
     body.one-page {
         padding-top: 70px;
     }
@@ -197,13 +207,13 @@ $fourth_level: #999;
         }
         &.one-page {
             top: 0;
-            @include right(auto);
+            right: auto;
             max-width: 1080px;
         }
         li {
             position: relative;
             list-style: none;
-            @include float(right);
+            float: right;
             display: block;
             background-color: $top_level;
             overflow: visible;
@@ -218,14 +228,14 @@ $fourth_level: #999;
         li > ul {
             position: absolute;
             top: auto;
-            @include left(0);
+            left: 0;
 
             li {
                 width: 100%;
             }
         }
         li ul li > ul {
-            @include margin-left(100%);
+            margin-left: 100%;
             top: 0;
         }
         li ul li:hover > ul,
@@ -244,7 +254,7 @@ $fourth_level: #999;
                 max-height: 100px;
             }
             ul.open {
-                @include margin-left(100%);
+                margin-left: 100%;
                 top: 0;
             }
         }
@@ -262,13 +272,13 @@ $fourth_level: #999;
         overflow: visible;
         &.one-page {
             top: 0;
-            @include right(auto);
+            right: auto;
             max-width: 1080px;
         }
         li {
             position: relative;
             list-style: none;
-            @include float(left);
+            float: left;
             display: block;
             background-color: $top_level;
       width: 20%;
@@ -285,7 +295,7 @@ $fourth_level: #999;
             }
         }
         li a {
-            @include border-left(1px solid #acaca1);
+            border-left: 1px solid #acaca1;
             border-bottom: none;
             overflow: visible;
         }
@@ -293,7 +303,7 @@ $fourth_level: #999;
             background:#acaca1;
             position: absolute;
             top: auto;
-            @include left(0);
+            left: 0;
             display: none;
             z-index: 1;
             overflow: visible;
@@ -312,7 +322,7 @@ $fourth_level: #999;
                 width: 100%;
             }
             ul.open {
-                @include margin-left(100%);
+                margin-left: 100%;
                 top: 0;
   				display: block;
                 width: 100%;
@@ -320,7 +330,7 @@ $fourth_level: #999;
             }
         }
         ul li:hover ul {
-            @include margin-left(100%);
+            margin-left: 100%;
             top: 0;
         }
     }
@@ -329,5 +339,14 @@ $fourth_level: #999;
     }
     &.ie7 .flexnav li {
         width: 19.9%;
+    }
+}
+#menu-all-pages {
+    @include grid-media($sm) {
+        display: flex;
+        flex-direction: column;
+    }
+    @include grid-media($md) {
+        flex-direction: row;
     }
 }

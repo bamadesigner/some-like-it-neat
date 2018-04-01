@@ -52,7 +52,8 @@ There are things you need to install before you hack away at things. There are t
 
 * #### Prerequisites
   * You'll need to download and install [Node](https://nodejs.org/)
-  * You will also need to download and install [Sass](http://sass-lang.com/install)
+  * You will need to download and install [Sass](http://sass-lang.com/install)
+  * You will need also need to download, install, and configure [Composer](https://getcomposer.org/doc/00-intro.md)
 
 * #### Getting and Installing the Theme
   * The first thing you’ll want to do is grab a copy of the theme —
@@ -124,8 +125,6 @@ a project.
     |    |   |    |   ├── navigation-offcanvas.css
     │    │   |    └── vendor
     |    |   |    |   ├── flexnav.css
-    |    |   |    ├── rtl-min.css
-    |    |   |    ├── rtl.css
     |    |   |    ├── style-min.css
     |    |   |    └── style.css
     │    |   └──  js
@@ -183,7 +182,6 @@ a project.
     │    |   |    |   └── flexnav.scss
     │    |   ├── _app.scss
     │    |   ├── _grid-settings.scss
-    │    |   ├── _rtl.scss
     │    |   └── style.scss
     ├── library
     │   └── languages
@@ -243,6 +241,11 @@ a project.
     └── style.css
 </code></pre>
 
+How to Contribute to This Project
+---------------
+Your generous pull requests are welcome! Have a look at our contribution guide for details:
+[Contribution Guide](https://github.com/digisavvy/some-like-it-neat/blob/master/CONTRIBUTING.md)
+
 Road Map
 ---------------
 * Firm up i18n for RTL and language support. Looking for contributors here
@@ -267,6 +270,7 @@ A special thanks to all the folks who inspire me on a daily basis to "do more" w
 * Devin Walker
 * Blair Williams
 * Robert Neu
+* Rachel Cherry (Roll tide, roll)
 * And a <del>fuckload</del> lot more that I'm missing here.
 
 License
@@ -316,8 +320,3 @@ Hover Intent
  - Source: https://github.com/tristen/hoverintent
  - License: the MIT
  - License URI: license.txt
-
-Bi-App-Sass
-- Source: http://anasnakawa.github.io/bi-app-sass/
-- License: the MIT License
-- License URI: https://github.com/anasnakawa/bi-app-sass/blob/master/LICENSE
